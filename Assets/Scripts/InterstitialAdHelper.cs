@@ -7,6 +7,16 @@ public class InterstitialAdHelper : MonoBehaviour, IUnityAdsLoadListener, IUnity
     [SerializeField] private string _iosAdUnityID = "Interstitial_IOS";
 
     private string _adUnityId;
+    public void OnUnityAdsAdLoaded(string placementId)
+    {
+        Debug.Log("Ad Loaded: " + placementId);
+
+        if (_adUnityId.Equals(placementId))
+        {
+            ShowAd();
+        }
+    }
+
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
     {
         Debug.Log($"Error loading Ad Unit: {_adUnityId} - {error.ToString()} - {message}");
@@ -23,7 +33,7 @@ public class InterstitialAdHelper : MonoBehaviour, IUnityAdsLoadListener, IUnity
 
     public void OnUnityAdsShowStart(string placementId) { }
 
-    
+
 
 
 
