@@ -3252,7 +3252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _androidGameID: 5735358
   _iosGameID: 5735359
-  _testMode: 1
+  _testMode: 0
   _bannerAdHelper: {fileID: 1935796737}
 --- !u!114 &1935796739
 MonoBehaviour:
