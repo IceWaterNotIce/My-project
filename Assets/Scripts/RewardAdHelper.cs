@@ -20,11 +20,11 @@ public class RewardAdHelper : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsSho
 
     private void Awake()
     {
-#if UNITY_ANDROID
-        _adUnityId = _androidAdUnityID;
-#else
-    _adUnityId = _iosAdUnityID;
-#endif
+        #if UNITY_ANDROID
+            _adUnityId = _androidAdUnityID;
+        #else
+            _adUnityId = _iosAdUnityID;
+        #endif
     }
 
 

@@ -12,8 +12,11 @@ public class BannerAdHelper : MonoBehaviour
 
     private void Start()
     {
-        _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer) ? _iosAdUnitID : _androidAdUnitID;
-
+        #if UNITY_ANDROID
+            _adUnitId = _androidAdUnitID;
+        #else
+            _adUnitId = _iosAdUnitID;
+        #endif
         Advertisement.Banner.SetPosition(m_bannerPos);
     }
 
